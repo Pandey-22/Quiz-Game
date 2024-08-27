@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz Game</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- Login Screen -->
+            <div class="login-screen">
+                <h1 class="heading">Login</h1>
+                <form id="loginForm">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" class="round" placeholder="Enter your name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="round" placeholder="Enter you email" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="round" placeholder="Enter your password" required>
+
+                    <button type="submit" class="btn login">Login</button>
+                </form>
+            </div>
+
+            <!-- Start Screen -->
+            <div class="start-screen hide">
+                <h1 class="heading">Quiz Game</h1>
+                <div class="settings">
+                    <!-- Number of Questions -->
+                    <label for="num-questions">Number of Questions</label>
+                    <select id="num-questions">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+
+                    <!-- Category -->
+                    <label for="category">Select Category</label>
+                    <select id="category">
+                        <option value="">Any Category</option>
+                        <option value="10">Books</option>
+                        <option value="10">General Knowledge</option>
+                        <option value="10">Films</option>
+                        <option value="10">Music</option>
+                        <option value="10">Television</option>
+                        <option value="10">Video Games</option>
+                        <option value="10">Board Games</option>
+                        <option value="10">Science and Nature</option>
+                        <option value="10">Computers</option>
+                        <option value="10">Mathematics</option>
+                        <option value="10">Geography</option>
+                        <option value="10">Sports</option>
+                        <option value="10">History</option>
+                        <option value="10">Politics</option>
+                        <option value="10">Art</option>
+                    </select>
+
+                    <!-- Difficulty -->
+                    <label for="difficulty">Select Difficulty</label>
+                    <select id="difficulty">
+                        <option value="">Any Difficulty</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+
+                    <!-- Time per Question -->
+                    <label for="time">Select Time per Question</label>
+                    <select id="time">
+                        <option value="10">10 Seconds</option>
+                        <option value="15">15 Seconds</option>
+                        <option value="20">20 Seconds</option>
+                        <option value="30">30 Seconds</option>
+                    </select>
+                </div>
+                <button class="btn start">Start Quiz</button>
+            </div>
+
+            <!-- Quiz Section -->
+            <div class="quiz hide">
+                <div class="timer">
+                    <div class="progress">
+                        <div class="progress-bar"></div>
+                        <span class="progress-text"></span>
+                    </div>
+                </div>
+
+                <div class="question-wrapper">
+                    <div class="number">
+                        Question <span class="current">1</span><span class="total">/10</span>
+                    </div>
+                    <div class="question">This is a question</div>
+                </div>
+                <div class="answer-wrapper">
+                    <!-- Answers will be dynamically injected here -->
+                </div>
+                <button class="submit">Submit</button>
+                <button class="next hide">Next</button>
+            </div>
+
+            <!-- End Screen -->
+            <div class="end-screen hide">
+                <h1 class="heading">Quiz Game</h1>
+                <div class="score">
+                    <span class="score-text">Your Score:</span>
+                    <div>
+                        <span id="finalScore">0</span>
+                        <span id="totalScore">/10</span>
+                    </div>
+                    <p id="feedback"></p> <!-- Feedback will be displayed here -->
+                    <button class="btn restart">Restart Quiz</button>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+</html>
